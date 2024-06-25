@@ -10,6 +10,7 @@ while True:
         break
 
     # Draw a circle in the image
+    img = np.zeros((1024, 1024, 3), np.uint8)
     cv2.circle(
         img = img,
         center = (512, 512),
@@ -17,6 +18,9 @@ while True:
         color = (0, 0, 255),
         thickness = 2
     )
-    r+=20
+    if x == ord('+'):
+        r += 10
+    elif x == ord('-'):
+        r -= 10
     print(x)
 cv2.destroyAllWindows()
